@@ -1,30 +1,27 @@
 //OBJECTIVE: Make the given string TitleCase;
 //INDORIA,A.
 
-var str="I'm a little teapot.";
-console.log(str);
-var strArray=str.split(" ");
-console.log(strArray);
+//changed it to a function
+function titleCase(str) {
+  var strArray=str.split(" ");
+  var finalArray=[];
 
-var finalArray=[];
+  for(var i=0;i<strArray.length;i++){
+    var elementOfArray=strArray[i].toLowerCase(); //Fixed an instance to account for Capital letters in middle of string
 
-console.log("\n Loop begins now \n")
+    var unchangedFLetter=elementOfArray[0];
 
-for(var i=0;i<strArray.length;i++){
-  var elementOfArray=strArray[i];
+    var changedUpperCase=unchangedFLetter.toUpperCase();
 
-  var unchangedFLetter=elementOfArray[0];
-
-  var changedUpperCase=unchangedFLetter.toUpperCase();
-
-  var changed=elementOfArray.replace(/./,changedUpperCase);
-  console.log("Changed word is: "+changed);
+    var changed=elementOfArray.replace(/./,changedUpperCase);
   
-  finalArray.push(changed);
-  console.log(finalArray);
-
-  
+    finalArray.push(changed);
+  }
+  return finalArray.join(" ");
 }
+
+titleCase("I'm a little tea pot");
+
 
 
 
